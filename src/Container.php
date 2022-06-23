@@ -69,11 +69,15 @@ class Container
         $parameters = $constructor->getParameters();
         $paramsInjecting = [];
         foreach ($parameters as $parameter) {
-            $type = $parameter->getType()->getName();
-            if (in_array($type, static::INJECT_IGNORE)) {
+            $type = $parameter->getType();
+            if ($type === null) {
                 break;
             }
-            $instance = $this->make($type);
+            $typeName = $type->getName();
+            if (in_array($typeName, static::INJECT_IGNORE)) {
+                break;
+            }
+            $instance = $this->make($typeName);
             if ($instance === null) {
                 break;
             }
