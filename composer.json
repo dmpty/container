@@ -1,0 +1,19 @@
+{
+    "name": "dmpty/container",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dmpty",
+            "email": "dmptyy@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Dmpty\\Container\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.0"
+    }
+}
