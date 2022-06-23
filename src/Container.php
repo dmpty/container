@@ -7,7 +7,7 @@ use ReflectionClass;
 
 class Container
 {
-    protected static $instance = null;
+    protected static ?Container $instance = null;
 
     const INJECT_IGNORE = [
         'string',
@@ -97,7 +97,7 @@ class Container
         //
     }
 
-    public static function getInstance()
+    public static function getInstance(): Container
     {
         if (static::$instance === null) {
             static::$instance = new static();
