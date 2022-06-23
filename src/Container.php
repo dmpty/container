@@ -80,7 +80,7 @@ class Container
             $paramsInjecting[] = $instance;
         }
         $newArgs = array_merge($paramsInjecting, $args);
-        return new $abstract($newArgs);
+        return new $abstract(...$newArgs);
     }
 
     private function __construct()
