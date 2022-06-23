@@ -62,7 +62,11 @@ class Container
     {
         /** @noinspection PhpUnhandledExceptionInspection */
         $reflector = new ReflectionClass($abstract);
-        $parameters = $reflector->getConstructor()->getParameters();
+        $constructor = $reflector->getConstructor();
+        if ($constructor === null) {
+            return new $abstract;
+        }
+        $parameters = $constructor->getParameters();
         $paramsInjecting = [];
         foreach ($parameters as $parameter) {
             $type = $parameter->getType()->getName();
