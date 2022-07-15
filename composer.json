@@ -1,7 +1,12 @@
 {
     "name": "dmpty/container",
+    "description": "A simple php Ioc container.",
     "type": "library",
     "license": "MIT",
+    "keywords": [
+        "ioc",
+        "container"
+    ],
     "authors": [
         {
             "name": "dmpty",
@@ -14,6 +19,6 @@
         }
     },
     "require": {
-        "php": "^8.0"
+        "php": ">=7.4"
     }
 }
